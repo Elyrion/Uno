@@ -10,13 +10,5 @@ public class Card {
 		this.type = type;
 	}
 	
-	public EColor getColor()
-	{
-		return this.color;
-	}
-	
-	public ECardType getType()
-	{
-		return this.type;
-	}
+
 }

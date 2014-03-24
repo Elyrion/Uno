@@ -1,9 +1,8 @@
 package de.GameLogic.Uno;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Stack;
-
+import java.
 public class GsGame implements IGameState {
 	Stack<Card> deck;
     Stack<Card> playedCards;
@@ -34,23 +33,26 @@ public class GsGame implements IGameState {
 		ArrayList<Card> tempCard;
 		tempCard = new ArrayList<Card>();
 		Card topCard; 
+		Card hCard; 
+		
 		
 		if(playedCards.peek()!=null)
 		{
 			topCard = playedCards.pop();
 		}
-		else
-		{
-			topCard = null;
-		}
 		
  		while(playedCards.peek()!=null)
  		{
-
- 				tempCard.add(playedCards.pop());	
+ 			if(tempCard.isEmpty())
+ 			{
+ 				tempCard.add(playedCards.pop());
+ 			}
+ 			else 
+ 			{
+ 				tempCard.add( 1+(int)(Math.random()*99), playedCards.pop());
+ 			}
+ 			
  		}
- 		
- 		Collections.shuffle(tempCard);
  		
 		for (Card a:tempCard)
 		{
@@ -58,7 +60,7 @@ public class GsGame implements IGameState {
 		}
 		if (topCard!=null)
 		{
-			playedCards.push(topCard);
+			deck.push(topCard);
 		}
 	}
 	
@@ -66,18 +68,9 @@ public class GsGame implements IGameState {
 	//@author = Sergej
 	private boolean isValidCard(Card card)
 	{
-		if(card.getColor()==playedCards.peek().getColor()
-		 ||card.getType()==playedCards.peek().getType()
-		 ||card.getColor()==EColor.BLACK)
-		{
+		//TODO: check if card is a valid card
 		return true;
-		}
-		else
-		{
-			return false;
-		}
-		
 	}
-		
+	
 	
 }

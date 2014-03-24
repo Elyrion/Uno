@@ -39,10 +39,6 @@ public class GsGame implements IGameState {
 		{
 			topCard = playedCards.pop();
 		}
-		else
-		{
-			topCard = null;
-		}
 		
  		while(playedCards.peek()!=null)
  		{
