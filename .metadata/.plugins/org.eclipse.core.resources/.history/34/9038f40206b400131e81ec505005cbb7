@@ -1,0 +1,5 @@
+package de.GameLogic.Uno;
+
+public interface IGameState {
+
+}

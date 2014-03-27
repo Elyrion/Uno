@@ -1,0 +1,12 @@
+package de.GameLogic.Uno;
+
+public enum ECardType {
+	VALUE_ONE,
+	VALUE_TWO,
+	VALUE_THREE,
+	SKIP_PLAYER,
+	//TODO REST
+	CHANGE_DIRECTION,
+	CHOOSE_COLOR,
+	DRAW_FOUR
+}
