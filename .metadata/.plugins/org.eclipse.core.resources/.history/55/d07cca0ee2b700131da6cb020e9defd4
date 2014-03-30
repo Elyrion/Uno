@@ -49,11 +49,10 @@ public class GsGame implements IGameState {
     		}
     	}
     }
-    
     //changes direction in which the players play
     private void changeDirection() {
     	
-    	this.nextPlayerValue * -1;
+    	this.nextPlayerValue*(-1)
     }
 	
 	//@author = Sergej

@@ -13,7 +13,7 @@ public class Player {
 	
 	public void drawCard(Card c)
 	{
-		this.handCards.add(c);
+	
 	}
 	
 	public static void main(String[] args)
