@@ -35,14 +35,14 @@ public class GsGame implements IGameState {
 	}
 	
 	//gets the next player who is able to play
-    private int getNextPlayerIndex(int currentPlayerPosition) {
+    private Player getNextPlayer(int currentPlayerPosition) {
     	
     	if(currentPlayerPosition + nextPlayerValue > players.size()) {
-    		return 0;
+    		return players.get(0);
     	}
     	else {
     		if (currentPlayerPosition + nextPlayerValue < 0) {
-    			return players.size()-1;
+    			return players.get(players.size()-1);
     		}
     		else {
     			return currentPlayerPosition + nextPlayerValue;
@@ -53,18 +53,7 @@ public class GsGame implements IGameState {
     //changes direction in which the players play
     private void changeDirection() {
     	
-    	this.nextPlayerValue *-1;
-    }
-    
-    private void drawTwo(int currentPlayerPosition) {
-    	
-    	players.get(currentPlayerPosition).drawCard(deck.pop());
-    	players.get(currentPlayerPosition).drawCard(deck.pop());
-    }
-    
-    private int skipPlayer(int currentPlayerPosition) {
-    	
-    	return getNextPlayerIndex(currentPlayerPosition+1);
+    	this.nextPlayerValue * -1;
     }
 	
 	//@author = Sergej
